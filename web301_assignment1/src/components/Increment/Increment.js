@@ -36,9 +36,9 @@ class Increment extends Component {
     }
 
     render(){
-        console.log(this);
+        // console.log(this);
         const { count } = this.state;
-        console.log(count);
+        // console.log(count);
         return (
             <Paper>
                 <div className={styles.container}>

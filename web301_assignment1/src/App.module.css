@@ -5,3 +5,16 @@
 .app .container{
   margin: 24px;
 }
+
+.app .container {
+  text-align: center;
+}
+
+.app i {
+  cursor: pointer;
+}
+
+.app .btnContainer {
+  position: relative;
+  display: inline-block;
+}
