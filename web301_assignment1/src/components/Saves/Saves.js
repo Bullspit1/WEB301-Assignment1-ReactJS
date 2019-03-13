@@ -24,7 +24,7 @@ class Saves extends Component {
 
 
     render(){
-        console.log(this);
+        // console.log(this);
         // const { count } = this.state;
         // console.log(count);
         return (

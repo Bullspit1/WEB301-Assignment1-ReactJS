@@ -32,9 +32,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        count: 0,
-        value: "",
-        click: false,
+      count: 0,
+        liveData: {
+          name: "",
+        },
+        savedData: {
+          eachTable: [
+            // {name:'', count:''},
+            // {},
+          ],
+        }
     };
     this.handleChange = this.handleChange.bind(this);
     this.sendInfo =this.sendInfo.bind(this);
@@ -46,43 +53,66 @@ handleChange(e){
   e.preventDefault();
   // console.log(e.target.value);
   this.setState({
-      value: e.target.value,
+    liveData: {
+      name: e.target.value,
+    },   
   });
 }
 
 sendInfo(e){
+  const { liveData, savedData, count } = this.state;
   e.preventDefault();
-  console.log(this.state.value); 
-  console.log(this.state.count);
+  // console.log(this.state.name); 
+  // console.log(this.state.count);
+  console.log(savedData.eachTable);
+  this.setState({
+    eachTable: savedData.eachTable.push({name: liveData.name, count: count}),
+    // savedData: {
+    //   eachTable: [{
+    //     name: liveData.name,
+    //     count: count,
+    //   }],
+      // {
+      //   this.state.eachTable.push({
+      //   name: liveData.name,
+      //   count: count,
+      // }),
+    // },
+});
+  // console.log(React.createElement('Saves',{styles:{color:'red'}}));
+  // console.log(document.body);
 //   this.setState({
-//     value: this.state.value,
+//     name: this.state.name,
 //   });
 }
 
 increment(e){
+  const { count } = this.state;
   // const { count } = this.state;
   e.preventDefault();
   // console.log(this.state.count +1);
   this.setState({
-      count : this.state.count + 1,
+      count : count + 1,
   });
 }
 
 decrement(e){
+  const { count } = this.state;
   e.preventDefault();
   // console.log(this.state.count <= 0);
   // if(this.state.count <= 0){
   //     this.state.show = true;
   // }
   this.setState({
-      count : this.state.count - 1,
+      count : count - 1,
   });
 }
 
 
   render() {
-    const { count } = this.state;
+    const { liveData, savedData, count } = this.state;
     console.log(this);
+    // console.log(savedData.eachTable);
     return (
       <div className={styles.app}>
       {/* App Bar */}
@@ -125,7 +155,10 @@ decrement(e){
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Saves val={this.state.value} count={this.state.count}/>
+                      {
+                        savedData.eachTable.map((dataObj, key) => <Saves key={key} val={dataObj.name} count={dataObj.count}/>)
+                      }
+                      {/* <Saves val={name} count={count}/> */}
                     </TableBody>
                 </Table>
             </Paper>
@@ -139,7 +172,7 @@ decrement(e){
           label="Name"
           placeholder=""
           margin="normal"
-          value={this.state.value}
+          value={liveData.name}
           onChange={this.handleChange}
         />
         <div className={styles.btnContainer}>
