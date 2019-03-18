@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './Submission.module.css';
 
 import Paper from '@material-ui/core/Paper';
@@ -7,54 +7,41 @@ import TextField from '@material-ui/core/TextField';
 
 import Button from '@material-ui/core/Button';
 
+import Grid from '@material-ui/core/Grid';
 
 
-class Submission extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            val: "",
-            // show: false,
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.sendInfo =this.sendInfo.bind(this);
-    }
 
-    handleChange(e){
-        e.preventDefault();
-        // console.log(e.target.value);
-        this.setState({
-            val: e.target.value,
-        });
-    }
-
-    sendInfo(){
-        console.log('Sent info'); 
-        // this.setState({
-
-        // });
-    }
-
-    render(){
-        console.log(this);
+// class Submission extends Component {
+const Submission = (props) => {
+    // render(){
+        // console.log(props);
         // const { count } = this.state;
         // console.log(count);
         return (
-            <Paper>
-            <TextField
-          id="standard-with-placeholder"
-          label="Name"
-          placeholder=""
-          margin="normal"
-          value={this.state.val}
-          onChange={this.handleChange}
-        />
-        <div className={styles.btnContainer}>
-        <Button variant="contained" color="primary" onClick={this.sendInfo}>Primary</Button>
-        </div>
-            </Paper>
+        <Paper className={styles.paper}>
+            <Grid container spacing={24} className={styles.container}>
+            <Grid item xs={6} className={styles.txt}>
+                <TextField
+                id="filled-with-placeholder"
+                label="Name"
+                placeholder=""
+                style={{ margin: 5 }}
+                margin="normal"
+                variant="filled"
+                fullWidth
+                value={props.value}
+                onChange={props.handleChange}
+                />
+                </Grid>
+                <Grid item xs={6} className={styles.btn}>
+                <div className={styles.btnContainer}>
+                    <Button size="large" variant="contained" style={{ background: '#2196f3', color: '#fff' }} onClick={props.sendInfo}>Primary</Button>
+                </div>
+                </Grid>
+            </Grid>
+        </Paper>
         );
-    }
+    // }
 }
     
 
