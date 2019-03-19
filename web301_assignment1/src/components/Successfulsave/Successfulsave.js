@@ -5,14 +5,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 
 
-// const Increment = (props) => {
 class SuccessfulSave extends Component {
     render(){
-        // console.log(this.props.savedData);
-        // console.log(this.props.open);
-        // console.log(this.props.clear);
-        // savedData.eachTable.map((dataObj, key ) => <Savedata key={key} val={dataObj.name} count={dataObj.count}/>)
-        // console.log(this.props.increment);
         return (
             <Snackbar
             variant="success"

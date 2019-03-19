@@ -88,7 +88,6 @@ decrement(e){
 
   render() {
     const { liveData, savedData, count, open } = this.state;
-    // console.log(this.state);
     return (
       <div className={styles.app}>
       <Navbar />
@@ -113,3 +112,11 @@ decrement(e){
 }
 
 export default App;
+
+
+/*By: Stephen Ditta
+ID: 033787144
+Date: 03/19/19
+Proffesor: Eric Chen
+*/
+

@@ -11,14 +11,10 @@ import Grid from '@material-ui/core/Grid';
 
 
 
-// class Submission extends Component {
 const Submission = (props) => {
-    // render(){
-        // console.log(props);
-        // const { count } = this.state;
-        // console.log(count);
         return (
         <Paper className={styles.paper}>
+        <form onSubmit={props.sendInfo}>
             <Grid container spacing={24} className={styles.container}>
             <Grid item xs={6} className={styles.txt}>
                 <TextField
@@ -35,10 +31,11 @@ const Submission = (props) => {
                 </Grid>
                 <Grid item xs={6} className={styles.btn}>
                 <div className={styles.btnContainer}>
-                    <Button size="large" variant="contained" style={{ background: '#2196f3', color: '#fff' }} onClick={props.sendInfo}>Primary</Button>
+                    <Button type='submit' size="large" variant="contained" style={{ background: '#2196f3', color: '#fff' }}>Primary</Button>
                 </div>
                 </Grid>
             </Grid>
+        </form>
         </Paper>
         );
     // }

@@ -10,7 +10,6 @@ import TableRow from '@material-ui/core/TableRow';
 
     const Savedatatable = (props) => {
         const { savedData } = props;
-        // console.log(props.name)
         return (
             <Paper>
                 <Table>
