@@ -55,7 +55,8 @@ sendInfo(e){
     open: true,
     count: 0,
   });
-  setTimeout(() => {
+  const timer = setTimeout(() => {
+    clearTimeout(timer);
     this.setState({
         open: false,
     });

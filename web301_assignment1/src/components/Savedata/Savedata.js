@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
             <TableBody>
                 {
                     val === "" ? (
-                console.log('nothing')
+                    null
                     ) : (
                 <TableRow>
                     <TableCell> {val} </TableCell>

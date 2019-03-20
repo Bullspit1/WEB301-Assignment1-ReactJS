@@ -8,15 +8,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+
     const Savedatatable = (props) => {
         const { savedData } = props;
         return (
             <Paper>
                 <Table>
-                    <TableHead>
+                    <TableHead style={{ background:'black' }}>
                         <TableRow>
-                            <TableCell> Name </TableCell>
-                            <TableCell> Count </TableCell>
+                            <TableCell style={{ color:'white' }}> Name </TableCell>
+                            <TableCell style={{ color:'white' }}> Count </TableCell>
                         </TableRow>
                     </TableHead>
                         {
